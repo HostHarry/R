@@ -23,15 +23,38 @@ attributes(df1)
 # row/column functions ----
 df <- data.frame(x = 1:3, y = letters[1:3])
 df
-rownames(df)
-colnames(df)
-names(df)
+
+str(df)
+summary(df)
+class(df)
+head(df)
+tail(df, n = 20)
 
 nrow(df)
 ncol(df)
 length(df)
+dim(df)
 
-t(df)
+rownames(df)
+colnames(df)
+names(df)
+
+# categorical data ----
+unique(df[["y"]])
+table(df[["y"]])
+
+# check for NA ----
+
+df[3, 1] <- NA
+df
+is.na(df)
+is.na(df[["x"]])
+any(is.na(df))
+sum(is.na(df[["x"]]))
+df[is.na(df), ]
+which(is.na(df[["x"]]))
+
+# bind ----
 
 rbind(df, df)
 cbind(df, df)
@@ -39,6 +62,9 @@ cbind(df, df)
 # exercise ----
 df <- data.frame(x = 1:3, y = letters[1:3])
 df2 <- rbind(df, df)
+
+df2[["y"]]
+unique(df2[["y"]])
 
 df2[["x"]][5]
 df2[["x"]][nrow(df2)]
