@@ -1,0 +1,28 @@
+---
+title: "Demo: R Markdown file"
+output: html_document
+---
+
+This is an **R Markdown** file. It is Markdown **plus** executable
+R code chunks, so text, code, and results live in one document.
+
+```{r summary}
+mtcars
+avg_mpg <- aggregate(mpg ~ cyl, data = mtcars, FUN = mean)
+avg_mpg
+```
+
+The table above is generated when the document is rendered, so it
+never goes stale. Plots work the same way:
+
+```{r plot, fig.height = 3}
+barplot(
+  avg_mpg$mpg,
+  names.arg = avg_mpg$cyl,
+  xlab = "Cylinders",
+  ylab = "Mean MPG"
+)
+```
+
+Inline code works too: the overall mean MPG is
+`r round(mean(mtcars$mpg), 1)`.
