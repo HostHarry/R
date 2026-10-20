@@ -2,6 +2,18 @@
 
 This repository contains files given during the Introduction to R module's lectures.
 
+## Paper 1 plot recreation
+
+Run `source("solution.R")` in R or `Rscript solution.R` in a terminal to recreate
+Figures 1A-C and 3-6 of the malaria paper using the original study CSV, stored
+in `spatioTemporalEpisodeHistories.csv` alongside `solution.R`. Figures 3-6 follow the authors'
+supplementary code: Figure 4 has two panels, and Figure 5 uses `PrevEpisodes / Age`.
+Plots and summary tables are saved in `paper_1/figures/` with filenames ending
+in `_recreated`. Every code line in `solution.R` has a Chinese explanation.
+The script uses the fixed project path `/Users/hostharry/Downloads/intro-r-lectures`;
+edit both `project_dir` and `data_file` if you move the project. The original CSV is required for every run.
+See [data sources, results and instructions](paper_1/README.md).
+
 ## Module Schedule (TBC for 26-27)
 
 | Session | Topic | Date |
@@ -18,4 +30,3 @@ This repository contains files given during the Introduction to R module's lectu
 | 09 | [Project 2: Reproducing plots from published journal papers](TBA) | 20 Oct. AM |
 | 10 | ODE model building with deSolve | 20 Oct. PM |
 | 11 | Revision (1 hour) | 21 Oct. PM |
-
